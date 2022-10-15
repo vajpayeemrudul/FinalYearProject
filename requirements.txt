@@ -1,4 +1,7 @@
+python-dev-tools
+gunicorn
 Flask==2.2.2
 keras==2.10.0
 nltk==3.7
 numpy==1.19.5
+
