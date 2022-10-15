@@ -1,6 +1,6 @@
 python-dev-tools
 gunicorn
-tensorflow
+tensorflow-cpu
 Flask
 keras
 nltk
