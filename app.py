@@ -50,8 +50,10 @@ def predict_class(sentence, model):
     return return_list
 
 def getResponse(ints, intents_json):
-    print("tag: " ,tag)
     tag = ints[0]['intent']
+    print("tag: " ,tag)
+    print(ints)
+    print()
     list_of_intents = intents_json['intents']
     result = None
     for i in list_of_intents:
