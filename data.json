@@ -1,144 +1,622 @@
-{"intents": [
+{
+  "intents": [
     {
-        "tag": "greeting",
-        "patterns": ["Hi", "Hey", "How are you", "Is anyone there?", "Hello", "Good day"],
-        "responses": ["Hey :-)", "Hello, thanks for visiting", "Hi there, what can I do for you?", "Hi there, how can I help?"]
-      },
-      {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
-        "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
-      },
-      {
-        "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-        "responses": ["Happy to help!", "Any time!", "My pleasure"]
-      },
-      {
-        "tag": "age",
-        "patterns": ["how old", "how old are you?", "what is your age", "how old are you", "age?"],
-        "responses": ["I get reborn after every compilation", "hey!", "my owners are averagely 20 years!"]
-      },
-      {
-        "tag": "name",
-        "patterns": ["what is your name", "what should i call you", "what's your name?", "who are you?", "can you tell me your name"],
-        "responses": ["you can call me Medbot!", "i am Medbot!", "i am Medbot your medical assistant"]
-      },
-      {
-        "tag": "common cold symptoms",
-        "patterns": [
-          "Runny or stuffy nose",
-          "Sore throat",
-          "Cough",
-          "Congestion",
-          "Slight body aches or a mild headache",
-          "Sneezing",
-          "Low-grade fever",
-          "Generally feeling unwell (malaise)"
-        ],
-        "responses": ["It seems that you are suffering from common cold"]
-      },
-      {
-        "tag": "fever symptoms",
-        "patterns": [
-          "Sweating",
-          "Chills and shivering",
-          "Headache",
-          "Muscle aches",
-          "Loss of appetite",
-          "Irritability",
-          "Dehydration",
-          "General weakness"
-        ],
-        "responses": ["It seems that you are suffering from fever"]
-      },
-      {
-        "tag": "Diabetes symptoms",
-        "patterns": ["increased hunger", "increased thirst", "weight loss", "frequent urination", "blurry vision", "extreme fatigue"],
-        "responses": ["It seems that you are suffering from Diabetes"]
-      },
-      {
-        "tag": "Depression symptoms",
-        "patterns": ["Hopeless outlook", "Lost interest", "Increased fatigue", "sleep problem", "Anxiety", "change in weight", "Looking at death"],
-        "responses": ["It seem that you are suffering from depression"]
-      },
-      {
-        "tag": "Asthma symptoms",
-        "patterns": ["coughing", "tightness in the chest", "shortness of breath", "difficulty talking", "panic", "fatigue"],
-        "responses": ["It seem that you are suffering from Asthma"]
-      },
-      {
-        "tag": "common cold prevention",
-        "patterns": [
-          "What medicines can I buy to help me with my common cold?",
-          "tell me some prevention method from common cold",
-          "What should I eat or drink if i am suffering from common cold?",
-          "How can I keep from getting a cold or the flu?"
-        ],
-        "responses": [
-          "medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
-        ]
-      },
-      {
-        "tag": "fever prevention",
-        "patterns": [
-          "What medicines can I buy to help me with my fever?",
-          "tell me some prevention method from fever",
-          "What should I eat or drink if i am suffering from fever?",
-          "How can I keep from getting a fever?"
-        ],
-        "responses": [
-          "medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
-        ]
-      },
-      {
-        "tag": "diabetes prevention",
-        "patterns": [
-          "What medicines can I buy to help me with my diabetes?",
-          "tell me some prevention method from diabetes",
-          "What should I eat or drink if i am suffering from diabetes?",
-          "How can I keep from getting diabetes?"
-        ],
-        "responses": [
-          "medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"
-        ]
-      },
-      {
-        "tag": "depression prevention",
-        "patterns": [
-          "What medicines can I buy to help me with my depression?",
-          "tell me some prevention method from depression",
-          "What should I eat or drink if i am suffering from depression?",
-          "How can I keep from getting depression?"
-        ],
-        "responses": [
-          "medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"
-        ]
-      },
-      {
-        "tag": "asthma prevention",
-        "patterns": [
-          "What medicines can I buy to help me with my asthma?",
-          "tell me some prevention method from asthma",
-          "What should I eat or drink if i am suffering from asthma?",
-          "How can I keep from getting asthma?"
-        ],
-        "responses": [
-          "medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"
-        ]
-      },
-      {
-        "tag": "Consultation",
-        "patterns": [
-          "who should i contact for consultation?",
-          "is there any doctor available?",
-          "can you give me some suggestions for doctor consultations?",
-          "can you set up a meeting with a doctor for consultation?",
-          "is there any doctor available for consultation"
-        ],
-        "responses": [
-          "You can contact various doctors here for any kind of consultation: 1. https://www.1mg.com/online-doctor-consultation, 2. https://www.tatahealth.com/online-doctor-consultation/general-physician, 3. https://www.doconline.com/, or you can pay a visit to your local area doctor or family doctor."
-        ]
-      }
-]
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "age",
+      "patterns": [
+        "how old",
+        "how old are you?",
+        "what is your age",
+        "how old are you",
+        "age?"
+      ],
+      "responses": [
+        "I get reborn after every compilation",
+        "hey!",
+        "my owners are averagely 20 years!"
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": [
+        "what is your name",
+        "what should i call you",
+        "what's your name?",
+        "who are you?",
+        "can you tell me your name"
+      ],
+      "responses": [
+        "you can call me Medibot!",
+        "i am Medibot!",
+        "i am Medibot your Well being assistant"
+      ]
+    },
+    {
+      "tag": "common cold symptoms",
+      "patterns": [
+        "Runny or stuffy nose",
+        "Sore throat",
+        "Cough",
+        "Congestion",
+        "Slight body aches or a mild headache",
+        "Sneezing",
+        "Low-grade fever",
+        "Generally feeling unwell (malaise)"
+      ],
+      "responses": [
+        "It seems that you are suffering from common cold. You may visit to this link: http://shorturl.at/doqxZ "
+      ]
+    },
+    {
+      "tag": "fever symptoms",
+      "patterns": [
+        "Sweating",
+        "Chills and shivering",
+        "Headache",
+        "Muscle aches",
+        "Loss of appetite",
+        "Irritability",
+        "Dehydration",
+        "General weakness"
+      ],
+      "responses": ["It seems that you are suffering from fever"]
+    },
+    {
+      "tag": "Diabetes symptoms",
+      "patterns": [
+        "increased hunger",
+        "increased thirst",
+        "weight loss",
+        "frequent urination",
+        "blurry vision",
+        "extreme fatigue"
+      ],
+      "responses": ["It seems that you are suffering from Diabetes"]
+    },
+    {
+      "tag": "Depression symptoms",
+      "patterns": [
+        "Hopeless outlook",
+        "Lost interest",
+        "Increased fatigue",
+        "sleep problem",
+        "Anxiety",
+        "change in weight",
+        "Looking at death"
+      ],
+      "responses": ["It seem that you are suffering from depression"]
+    },
+    {
+      "tag": "Asthma symptoms",
+      "patterns": [
+        "coughing",
+        "tightness in the chest",
+        "shortness of breath",
+        "difficulty talking",
+        "panic",
+        "fatigue"
+      ],
+      "responses": ["It seem that you are suffering from Asthma"]
+    },
+    {
+      "tag": "common cold prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my common cold?",
+        "tell me some prevention method from common cold",
+        "What should I eat or drink if i am suffering from common cold?",
+        "How can I keep from getting a cold or the flu?"
+      ],
+      "responses": [
+        "medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
+      ]
+    },
+    {
+      "tag": "fever prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my fever?",
+        "tell me some prevention method from fever",
+        "What should I eat or drink if i am suffering from fever?",
+        "How can I keep from getting a fever?"
+      ],
+      "responses": [
+        "medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
+      ]
+    },
+    {
+      "tag": "diabetes prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my diabetes?",
+        "tell me some prevention method from diabetes",
+        "What should I eat or drink if i am suffering from diabetes?",
+        "How can I keep from getting diabetes?"
+      ],
+      "responses": [
+        "medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"
+      ]
+    },
+    {
+      "tag": "depression prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my depression?",
+        "tell me some prevention method from depression",
+        "What should I eat or drink if i am suffering from depression?",
+        "How can I keep from getting depression?"
+      ],
+      "responses": [
+        "medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"
+      ]
+    },
+    {
+      "tag": "asthma prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my asthma?",
+        "tell me some prevention method from asthma",
+        "What should I eat or drink if i am suffering from asthma?",
+        "How can I keep from getting asthma?"
+      ],
+      "responses": [
+        "medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"
+      ]
+    },
+    {
+      "tag": "Consultation",
+      "patterns": [
+        "who should i contact for consultation?",
+        "is there any doctor available?",
+        "can you give me some suggestions for doctor consultations?",
+        "can you set up a meeting with a doctor for consultation?",
+        "is there any doctor available for consultation"
+      ],
+      "responses": [
+        "You can contact various doctors here for any kind of consultation: 1. https://www.1mg.com/online-doctor-consultation, 2. https://www.tatahealth.com/online-doctor-consultation/general-physician, 3. https://www.doconline.com/, or you can pay a visit to your local area doctor or family doctor."
+      ]
+    },
+
+    {
+      "tag": "chickenpox",
+      "patterns": [
+        "fever",
+        "Headache",
+        " red blisters",
+        "swollen lymph nodes",
+        " loss of appetite"
+      ],
+      "responses": [
+        "This might be the intial stage of chickenpox. I recommend you to consult a doctor as vaccine is required."
+      ]
+    },
+    {
+      "tag": "chickenpox prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my chickenpox?",
+        "tell me some prevention method from chickenpox",
+        "What should I eat or drink if i am suffering fromchickenpox?",
+        "How can I keep from getting chickenpox?"
+      ],
+      "responses": [
+        "medicines you can consume :antiviral drug such as acyclovir (Zovirax, Sitavig), prevention that you must follow :stay away from infected person,get the chickenpox vaccine,Drink Water as Your Primary Beverage,SUGGESTED FOODS ARE:hot foods,Avoid drinking untreated water"
+      ]
+    },
+
+    {
+      "tag": "thyroid",
+      "patterns": [
+        "Weight gain",
+        "Muscle weakness",
+        "Increased sensitivity to cold",
+        "Impaired memory"
+      ],
+      "responses": [
+        "This might be the initial stage of the thyroid. I recommend you to avoid eating heavy fats and carbohydrates and include exercise in your routine. If the problem persists, consult a doctor soon."
+      ]
+    },
+    {
+      "tag": "thyroid prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my thyroid?",
+        "tell me some prevention method from thyroid",
+        "What should I eat or drink if i am suffering from thyroid?",
+        "How can I keep from getting thyroid?"
+      ],
+
+      "responses": [
+        "We suggest you to please consult a doctor. Common preventions are Avoid Processed Food,Avoid Soy,Stop Smoking,Reduce Stress. Visit the below link: shorturl.at/bzE47"
+      ]
+    },
+
+    {
+      "tag": "malaria",
+      "patterns": [
+        "high fever",
+        "shaking chills",
+        "headache",
+        "Nausea",
+        "vomiting",
+        "diarrhea symptoms",
+        "night sweats",
+        "fatigue",
+        "pain in abdomen"
+      ],
+      "responses": [
+        "This might be the intial stage of malaria. I recommend you to consult a doctor and you will be fine in next 2 weeks."
+      ]
+    },
+    {
+      "tag": "malaria prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my malaria?",
+        "tell me some prevention method from malaria",
+        "What should I eat or drink if I am suffering from malaria?",
+        "How can I keep from getting malaria?"
+      ],
+      "responses": [
+        "medicines you can consume :  artemisinin combination therapy,Atovaquone ,Doxycycline, prevention that you must follow :Apply mosquito repellent with DEET (diethyltoluamide) to exposed skin,Treat clothing, mosquito nets, tents, sleeping bags and other fabrics with an insect repellent called permethrin,Drink Water as Your Primary Beverage, SUGGESTED FOODS ARE:Fresh fruits and vegetables like beetroot, carrot, papaya, sweet lime, grapes, berries, lemon, orange help to detoxify and boost the immunity of the patient suffering from malaria"
+      ]
+    },
+    {
+      "tag": "dengue",
+      "patterns": [
+        "high fever",
+        "Headache",
+        "rash",
+        "pain behind eyes",
+        "muscle pain",
+        "bone pain",
+        "vomiting",
+        "Bleeding from the nose or gums"
+      ],
+      "responses": [
+        "This might be the initial stage of dengue. I recommend you to consult a doctor as soon as possible"
+      ]
+    },
+    {
+      "tag": "dengue prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my dengue?",
+        "tell me some prevention method from dengue",
+        "What should I eat or drink if I am suffering from dengue?",
+        "How can I keep myself away from getting dengue?"
+      ],
+      "responses": [
+        "stay well hydrated and avoid aspirin (acetylsalicylic acid), aspirin-containing drugs, and other nonsteroidal anti-inflammatory drugs (such as ibuprofen) because of aspirin has anticoagulant properties,Fever should be controlled with acetaminophen and tepid sponge baths,"
+      ]
+    },
+    {
+      "tag": "Anxiety",
+      "patterns": [
+        "excessive worry",
+        "fear",
+        "feeling of impending doom",
+        "insomnia",
+        "nausea",
+        "trembling",
+        "heavy sweating",
+        "fatigue"
+      ],
+      "responses": [
+        "This might be the initial stage of Anxiety. I recommend you to avoid alcohol, reduce caffeine intake, quit smoking,follow a healthy diet, use stress management and relaxation techniques. If the problem persists,consult a doctor for medical advice."
+      ]
+    },
+    {
+      "Tag": "heart attack",
+      "patterns": [
+        "pain in your chest",
+        "pain in arm or below your breastbone",
+        "choking feeling",
+        "Severe weakness",
+        " shortness of breath",
+        "Nausea or vomiting"
+      ],
+      "responses": [
+        "This might be a heart attack. Don't panic.Call 911 and start CPR (cardiopulmonary resuscitation).Consult a near by hospital as soon as possible."
+      ]
+    },
+    {
+      "tag": "Breast Cancer",
+      "patterns": [
+        "New lump in the breast or underarm (armpit)",
+        "Thickening or swelling of part of the breast",
+        "Irritation or dimpling of breast skin",
+        "Redness or flaky skin in the nipple area or the breast",
+        "Pulling in of the nipple or pain in the nipple area"
+      ],
+      "responses": [
+        "This might be the initial stage of Breast cancer. I recommend you to limit alcohol,be physically active. If the problem persists,consult a doctor for medical advice."
+      ]
+    },
+    {
+      "tag": "Diarrhea",
+      "patterns": [
+        "Abdominal cramps or pain",
+        "Bloating",
+        "Vomiting",
+        "nausea",
+        "Mucus in the stool",
+        "Blood in stool",
+        "Urgent need to have a bowel movement"
+      ],
+      "responses": [
+        "This might be the initial stage of Diarrhea. I recommend you to access safe drinking-water,use of improved sanitation,good personal and food hygiene. If the problem persists,consult a doctor for medical advice."
+      ]
+    },
+    {
+      "Tag": "Food poisoning",
+      "patterns": [
+        "diarrhea",
+        "nausea",
+        "stomach cramps",
+        "vomiting",
+        "chills",
+        "loss of appetite"
+      ],
+      "responses": [
+        "This might be the initial stage of the Food poisoning. I recommend that Ensuring adequate hydration is the most important aspect of treatment and ORS ( oral rehydration solution) .If the problem persists, consult a doctor soon."
+      ]
+    },
+    {
+      "tag": "typhoid",
+      "Patterns": [
+        "Fever that starts low and increases daily",
+        "Headache",
+        "Dry cough",
+        "Stomach pain",
+        "loss of appetite and weight loss",
+        "Extremely swollen stomach"
+      ],
+      "responses": [
+        "This might be the intial stage of typhoid. I recommend you to consult a doctor"
+      ]
+    },
+    {
+      "tag": "typhoid prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my typhoid?",
+        "tell me some prevention method from typhoid",
+        "What should I eat or drink if i am suffering from typhoid?",
+        "How can I keep from getting typhoid?"
+      ],
+      "responses": [
+        "medicines you can consume : Ciprofloxacin (Cipro).,Azithromycin (Zithromax),Ceftriaxone, prevention that you must follow :Safe drinking water,improved sanitation and adequate medical care can help prevent and control typhoid fever,Drink Water as Your Primary Beverage,SUGGESTED FOODS ARE:hot foods,Avoid drinking untreated water"
+      ]
+    },
+    {
+      "tag": "Conjunctivitis",
+      "patterns": [
+        "Redness in the white of the eye or inner eyelid",
+        "More tears than usual",
+        "Itchy eyes",
+        "More sensitive to light"
+      ],
+      "responses": [
+        "This might be the intial stage Conjunctivitis but it is very common and will get better by its own"
+      ]
+    },
+    {
+      "Tag": "kidney stones",
+      "patterns": [
+        "Severe, sharp backpain in the side and back, below the ribs",
+        "Pain that comes in waves and fluctuates in intensity",
+        "Pain that radiates to the lower abdomen and groin"
+      ],
+      "responses": [
+        "This might be the initial stage of Kidney Stones.I recommend you to consult a doctor as it might get severe later."
+      ]
+    },
+    {
+      "tag": "kidney stones prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my kidney stones?",
+        "tell me some prevention method from kidney stones",
+        "What should I eat or drink if I am suffering from kidney stones?",
+        "How can I keep from getting kidney stones?"
+      ],
+      "responses": [
+        "medicines you can consume :alpha blocker medication relaxes the muscles in your ureter helping you pass the kidney stone more quickly and with less pain Examples of alpha blockers include tamsulosin (Flomax) and the drug combination dutasteride and tamsulosin (Jalyn), prevention that you must follow :drink as much as 1.8 to 3.6 liters of water a day that will keep your urine dilute and may prevent stones from forming,dd fresh lemon juice to your water,avoid fizzy drinks.,do not eat too much salt.,SUGGESTED FOODS ARE:Take Whole grains foods,low-fat dairy products, Limit sugar-sweetened foods and drinks, especially those that have high fructose corn syrup. Limit alcohol because it can increase uric acid levels in the blood and avoid short term diets for the same reason"
+      ]
+    },
+    {
+      "tag": "tuberculosis",
+      "patterns": [
+        "Coughing for three or more weeks",
+        "Chest pain, or pain with breathing or coughing",
+        "Unintentional weight loss",
+        "Loss of appetite",
+        "Coughing up blood or mucus"
+      ],
+      "responses": [
+        "This might be the initial stage of Tuberculosis. I recommend you to consult a doctor."
+      ]
+    },
+    {
+      "tag": "Tuberculosis prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my  Tuberculosis ?",
+        "tell me some prevention method from Tuberculosis",
+        "What should I eat or drink if I am suffering from Tuberculosis?",
+        "How can I keep from getting Tuberculosis?"
+      ],
+      "responses": [
+        "Medicines you can consume :antibiotics (isoniazid and rifampicin),Rifampin (RIF),Pyrazinamide (PZA),prevention that you must follow :Take BCG vaccination to be safe,keep good ventilation,be exposed to sunlight for sometime as UV light kills off TB bacteria, covering the mouth and nose when coughing or sneezing reduces the spread of TB bacteria.,SUGGESTED FOODS ARE:Fruits and vegetables like orange, mango, sweet pumpkin and carrots, guava, amla, tomato, nuts and seeds which are an excellent source of Vitamin A, C and E,,Avoid spicy, hot, salty oily foods"
+      ]
+    },
+    {
+      "tag": "anemia",
+      "patterns": [
+        "Irregular heartbeats",
+        "Pale or yellowish skin",
+        "Shortness of breath",
+        "Cold hands and feet",
+        "Headaches",
+        "Dizziness or lightheadedness"
+      ],
+      "responses": [
+        "This might be the initial stage of anemia.I recommend you to consult a doctor as it might get severe later."
+      ]
+    },
+    {
+      "tag": "anemia prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my anemia?",
+        "tell me some prevention method from anemia",
+        "What should I eat or drink if I am suffering from anemia?",
+        "How can I keep from getting anemia?"
+      ],
+      "responses": [
+        "medicines you can consume :Feosol(ferrous sulfate),cyanocobalamin,Slow Fe, prevention that you must follow :Making healthy lifestyle choices,including a nutritious, iron-rich diet, can help prevent common types of anemia,keep yourself physically active,suggested foods are:Take Iron-rich foods which include beans, lentils, iron-fortified cereals, dark green leafy vegetables and dried fruit.,dark green leafy vegetables, green peas, kidney beans, "
+      ]
+    },
+    {
+      "tag": "Cervical spondylosis",
+      "patterns": [
+        "Neck pain",
+        "Neck stiffness",
+        "numbness and weakness in the arms"
+      ],
+      "responses": [
+        "This might be the initial stage of Cervical spondylosis . I recommend you to consult a doctor d."
+      ]
+    },
+    {
+      "tag": "Cervical spondylosis prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my  Cervical spondylosis?",
+        "tell me some prevention method from Cervical spondylosis",
+        "What should I eat or drink if I am suffering fromCervical spondylosis?",
+        "How can I keep from getting Cervical spondylosis?"
+      ],
+      "responses": [
+        "medicines you can consume :Ibuprofen (Advil, Motrin IB, others),naproxen sodium (Aleve) or acetaminophen (Tylenol, others), prevention that you must follow :Stay physically active,Use good posture,Prevent neck injuries by always using the right equipment and the right form when exercising or playing sports,Avoid trauma to your neck,SUGGESTED FOODS ARE:Dairy products –Avoid red meat, white potato and coffee as it increase acid load in the body, Include fruit juice and veg soup in the routine diet.,Replace rice with wheat,Avoid spicy, hot, salty oily foods"
+      ]
+    },
+    {
+      "tag": "Arthritis",
+      "patterns": [
+        "The pains in joints last for more than a week",
+        "joint pain usually accompanied with fever",
+        "swelling and stiffness in the joints"
+      ],
+      "responses": [
+        "This might be the initial stage of Arthritis. I recommend you to consult a doctor."
+      ]
+    },
+    {
+      "tag": "Arthritis prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my Arthritis ?",
+        "tell me some prevention method from Arthritis",
+        "What should I eat or drink if I am suffering from Arthritis?",
+        "How can I keep from getting Arthritis?"
+      ],
+      "responses": [
+        "medicines you can consume : Nonsteroidal anti-inflammatory drugs (NSAIDs),Disease-modifying antirheumatic drugs (DMARDs), prevention that you must follow :Stay at a healthy weight,Control your blood sugar,Quit smoking, Gentle stretching can improve your range of motion and keep your joints limber,SUGGESTED FOODS ARE:Dairy products – Milk, Curd, Cheese for calcium,If you are an Arthritic patient, then replace your vegetable oils with olive oil."
+      ]
+    },
+    {
+      "tag": "Conjunctivitis",
+      "patterns": [
+        "Redness in the white of the eye or inner eyelid",
+        "More tears than usual",
+        "Itchy eyes",
+        "More sensitive to light"
+      ],
+      "responses": [
+        "This might be the intial stage Conjunctivitis but it is very common and will get better by its own"
+      ]
+    },
+    {
+      "tag": "Conjunctivitis prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my Conjunctivitis?",
+        "tell me some prevention method from Conjunctivitis",
+        "What should I eat or drink if i am suffering from Conjunctivitis?",
+        "How can I keep from getting Conjunctivitis?"
+      ],
+      "responses": [
+        "medicines you can consume : antihistamines and mast cell stabilizers, drugs that help control inflammation, such as decongestants, steroids and anti-inflammatory drops,Don't share eye cosmetics or personal eye care items., prevention that you must follow :Don't touch your eyes with your hands.,Stay hydrated,SUGGESTED drops for eyes are:herbal eye drops,Include Omega-3 oil"
+      ]
+    },
+    {
+      "tag": "Coronavirus",
+      "patterns": [
+        "Fever",
+        "Coughing",
+        "Tiredness or Fatigue",
+        "Loss of taste or smell",
+        "Headache",
+        "Sore Throat",
+        "Shortness of breath"
+      ],
+      "responses": [
+        "This might be the case of coronavirus. We suggest you to please measure your oxygen level and isolate yourselves from others."
+      ]
+    },
+    {
+      "tag": "Coronavirus prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my Coronavirus?",
+        "tell me some prevention method from Coronavirus",
+        "What should I eat or drink if i am suffering from Coronavirus?",
+        "How can I keep from getting Coronavirus?"
+      ],
+      "responses": [
+        "Isolate yourself in a well ventilated room,Mask should be discarded only after disinfecting it with 1% Sodium Hypochlorite.., Ensure cleaning of surfaces in the room that are touched often (tabletops, doorknobs, handles, etc.) with 1% hypochlorite solution,Connect with the treating physician promptly if any deterioration of symptoms is noticed.,"
+      ]
+    },
+    {
+      "tag": "Cancer",
+      "patterns": [
+        "abnormal lump",
+        "unexplained weight loss",
+        "Tiredness or Fatigue",
+        "change in bowel movements",
+        "abnormal bleeding",
+        "prolonged cough"
+      ],
+      "responses": [
+        "This might be the case of cancer. We suggest you to please consult a doctor as soon as possible"
+      ]
+    },
+    {
+      "tag": "Cancer prevention",
+      "patterns": [
+        "What medicines can I buy to help me with my Cancer?",
+        "tell me some prevention method from Cancer",
+        "What should I eat or drink if i am suffering from cancer?",
+        "How can I keep from getting Cancer?"
+      ],
+      "responses": [
+        "Avoiding known causes of cancer like tobacco use, radiation exposure,A diet low in fat and high in fiber, fruits, and vegetables lowers the risk of certain types of cancers,Vaccination against hepatitis B virus and human papillomavirus,Screening tests at regular intervals of those who are at higher risk e.g., people who have family history of cancers or who are exposed to ionizing radiations."
+      ]
+    }
+  ]
 }
