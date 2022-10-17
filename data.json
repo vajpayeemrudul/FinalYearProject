@@ -65,7 +65,6 @@
       "tag": "common cold symptoms",
       "patterns": [
         "Runny or stuffy nose",
-        "Sore throat",
         "Cough",
         "Congestion",
         "Slight body aches or a mild headache",
@@ -73,6 +72,7 @@
         "Low-grade fever",
         "Generally feeling unwell (malaise)"
       ],
+      "check": "common cold",
       "responses": [
         "It seems that you are suffering from common cold. You may visit to this link: http://shorturl.at/doqxZ "
       ]
@@ -83,12 +83,11 @@
         "Sweating",
         "Chills and shivering",
         "Headache",
-        "Muscle aches",
         "Loss of appetite",
         "Irritability",
-        "Dehydration",
         "General weakness"
       ],
+      "check": "fever",
       "responses": ["It seems that you are suffering from fever"]
     },
     {
@@ -101,6 +100,7 @@
         "blurry vision",
         "extreme fatigue"
       ],
+      "check": "Diabetes",
       "responses": ["It seems that you are suffering from Diabetes"]
     },
     {
@@ -114,18 +114,20 @@
         "change in weight",
         "Looking at death"
       ],
+      "check": "depression",
       "responses": ["It seem that you are suffering from depression"]
     },
     {
       "tag": "Asthma symptoms",
       "patterns": [
-        "coughing",
+        "Severecough",
         "tightness in the chest",
         "shortness of breath",
         "difficulty talking",
         "panic",
         "fatigue"
       ],
+      "check": "asthma",
       "responses": ["It seem that you are suffering from Asthma"]
     },
     {
@@ -136,6 +138,7 @@
         "What should I eat or drink if i am suffering from common cold?",
         "How can I keep from getting a cold or the flu?"
       ],
+      "check": "common cold",
       "responses": [
         "medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
       ]
@@ -148,6 +151,7 @@
         "What should I eat or drink if i am suffering from fever?",
         "How can I keep from getting a fever?"
       ],
+      "check": "fever",
       "responses": [
         "medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
       ]
@@ -160,6 +164,7 @@
         "What should I eat or drink if i am suffering from diabetes?",
         "How can I keep from getting diabetes?"
       ],
+      "check": "diabetes",
       "responses": [
         "medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"
       ]
@@ -172,6 +177,7 @@
         "What should I eat or drink if i am suffering from depression?",
         "How can I keep from getting depression?"
       ],
+      "check": "depression",
       "responses": [
         "medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"
       ]
@@ -206,11 +212,11 @@
       "tag": "chickenpox",
       "patterns": [
         "fever",
-        "Headache",
         " red blisters",
         "swollen lymph nodes",
         " loss of appetite"
       ],
+      "check": "chickenpox",
       "responses": [
         "This might be the intial stage of chickenpox. I recommend you to consult a doctor as vaccine is required."
       ]
@@ -223,6 +229,7 @@
         "What should I eat or drink if i am suffering fromchickenpox?",
         "How can I keep from getting chickenpox?"
       ],
+      "check": "chickenpox",
       "responses": [
         "medicines you can consume :antiviral drug such as acyclovir (Zovirax, Sitavig), prevention that you must follow :stay away from infected person,get the chickenpox vaccine,Drink Water as Your Primary Beverage,SUGGESTED FOODS ARE:hot foods,Avoid drinking untreated water"
       ]
@@ -236,6 +243,7 @@
         "Increased sensitivity to cold",
         "Impaired memory"
       ],
+      "check": "thyroid",
       "responses": [
         "This might be the initial stage of the thyroid. I recommend you to avoid eating heavy fats and carbohydrates and include exercise in your routine. If the problem persists, consult a doctor soon."
       ]
@@ -248,7 +256,7 @@
         "What should I eat or drink if i am suffering from thyroid?",
         "How can I keep from getting thyroid?"
       ],
-
+      "check": "thyroid",
       "responses": [
         "We suggest you to please consult a doctor. Common preventions are Avoid Processed Food,Avoid Soy,Stop Smoking,Reduce Stress. Visit the below link: shorturl.at/bzE47"
       ]
@@ -262,11 +270,11 @@
         "headache",
         "Nausea",
         "vomiting",
-        "diarrhea symptoms",
         "night sweats",
         "fatigue",
         "pain in abdomen"
       ],
+      "check": "malaria",
       "responses": [
         "This might be the intial stage of malaria. I recommend you to consult a doctor and you will be fine in next 2 weeks."
       ]
@@ -279,6 +287,7 @@
         "What should I eat or drink if I am suffering from malaria?",
         "How can I keep from getting malaria?"
       ],
+      "check": "malaria",
       "responses": [
         "medicines you can consume :  artemisinin combination therapy,Atovaquone ,Doxycycline, prevention that you must follow :Apply mosquito repellent with DEET (diethyltoluamide) to exposed skin,Treat clothing, mosquito nets, tents, sleeping bags and other fabrics with an insect repellent called permethrin,Drink Water as Your Primary Beverage, SUGGESTED FOODS ARE:Fresh fruits and vegetables like beetroot, carrot, papaya, sweet lime, grapes, berries, lemon, orange help to detoxify and boost the immunity of the patient suffering from malaria"
       ]
@@ -295,6 +304,7 @@
         "vomiting",
         "Bleeding from the nose or gums"
       ],
+      "check": "dengue",
       "responses": [
         "This might be the initial stage of dengue. I recommend you to consult a doctor as soon as possible"
       ]
@@ -307,6 +317,7 @@
         "What should I eat or drink if I am suffering from dengue?",
         "How can I keep myself away from getting dengue?"
       ],
+      "check": "dengue",
       "responses": [
         "stay well hydrated and avoid aspirin (acetylsalicylic acid), aspirin-containing drugs, and other nonsteroidal anti-inflammatory drugs (such as ibuprofen) because of aspirin has anticoagulant properties,Fever should be controlled with acetaminophen and tepid sponge baths,"
       ]
@@ -323,12 +334,13 @@
         "heavy sweating",
         "fatigue"
       ],
+      "check": "Anxiety",
       "responses": [
         "This might be the initial stage of Anxiety. I recommend you to avoid alcohol, reduce caffeine intake, quit smoking,follow a healthy diet, use stress management and relaxation techniques. If the problem persists,consult a doctor for medical advice."
       ]
     },
     {
-      "Tag": "heart attack",
+      "tag": "heart attack",
       "patterns": [
         "pain in your chest",
         "pain in arm or below your breastbone",
@@ -337,8 +349,9 @@
         " shortness of breath",
         "Nausea or vomiting"
       ],
+      "check": "heart attack",
       "responses": [
-        "This might be a heart attack. Don't panic.Call 911 and start CPR (cardiopulmonary resuscitation).Consult a near by hospital as soon as possible."
+        "This might be a heart attack. Don't panic. Call 911 and start CPR (cardiopulmonary resuscitation).Consult a near by hospital as soon as possible."
       ]
     },
     {
@@ -350,6 +363,7 @@
         "Redness or flaky skin in the nipple area or the breast",
         "Pulling in of the nipple or pain in the nipple area"
       ],
+      "check": "Breast Cancer",
       "responses": [
         "This might be the initial stage of Breast cancer. I recommend you to limit alcohol,be physically active. If the problem persists,consult a doctor for medical advice."
       ]
@@ -365,12 +379,13 @@
         "Blood in stool",
         "Urgent need to have a bowel movement"
       ],
+      "check": "Diarrhea",
       "responses": [
         "This might be the initial stage of Diarrhea. I recommend you to access safe drinking-water,use of improved sanitation,good personal and food hygiene. If the problem persists,consult a doctor for medical advice."
       ]
     },
     {
-      "Tag": "Food poisoning",
+      "tag": "Food poisoning",
       "patterns": [
         "diarrhea",
         "nausea",
@@ -379,20 +394,22 @@
         "chills",
         "loss of appetite"
       ],
+      "check": "Food poisoning",
       "responses": [
         "This might be the initial stage of the Food poisoning. I recommend that Ensuring adequate hydration is the most important aspect of treatment and ORS ( oral rehydration solution) .If the problem persists, consult a doctor soon."
       ]
     },
     {
       "tag": "typhoid",
-      "Patterns": [
+      "patterns": [
         "Fever that starts low and increases daily",
         "Headache",
-        "Dry cough",
+        "Drycough",
         "Stomach pain",
         "loss of appetite and weight loss",
         "Extremely swollen stomach"
       ],
+      "check": "typhoid",
       "responses": [
         "This might be the intial stage of typhoid. I recommend you to consult a doctor"
       ]
@@ -405,6 +422,7 @@
         "What should I eat or drink if i am suffering from typhoid?",
         "How can I keep from getting typhoid?"
       ],
+      "check": "typhoid",
       "responses": [
         "medicines you can consume : Ciprofloxacin (Cipro).,Azithromycin (Zithromax),Ceftriaxone, prevention that you must follow :Safe drinking water,improved sanitation and adequate medical care can help prevent and control typhoid fever,Drink Water as Your Primary Beverage,SUGGESTED FOODS ARE:hot foods,Avoid drinking untreated water"
       ]
@@ -417,17 +435,19 @@
         "Itchy eyes",
         "More sensitive to light"
       ],
+      "check": "Conjunctivitis",
       "responses": [
         "This might be the intial stage Conjunctivitis but it is very common and will get better by its own"
       ]
     },
     {
-      "Tag": "kidney stones",
+      "tag": "kidney stones",
       "patterns": [
         "Severe, sharp backpain in the side and back, below the ribs",
         "Pain that comes in waves and fluctuates in intensity",
         "Pain that radiates to the lower abdomen and groin"
       ],
+      "check": "kidney stones",
       "responses": [
         "This might be the initial stage of Kidney Stones.I recommend you to consult a doctor as it might get severe later."
       ]
@@ -440,6 +460,7 @@
         "What should I eat or drink if I am suffering from kidney stones?",
         "How can I keep from getting kidney stones?"
       ],
+      "check": "kidney stones",
       "responses": [
         "medicines you can consume :alpha blocker medication relaxes the muscles in your ureter helping you pass the kidney stone more quickly and with less pain Examples of alpha blockers include tamsulosin (Flomax) and the drug combination dutasteride and tamsulosin (Jalyn), prevention that you must follow :drink as much as 1.8 to 3.6 liters of water a day that will keep your urine dilute and may prevent stones from forming,dd fresh lemon juice to your water,avoid fizzy drinks.,do not eat too much salt.,SUGGESTED FOODS ARE:Take Whole grains foods,low-fat dairy products, Limit sugar-sweetened foods and drinks, especially those that have high fructose corn syrup. Limit alcohol because it can increase uric acid levels in the blood and avoid short term diets for the same reason"
       ]
@@ -453,6 +474,7 @@
         "Loss of appetite",
         "Coughing up blood or mucus"
       ],
+      "check": "tuberculosis",
       "responses": [
         "This might be the initial stage of Tuberculosis. I recommend you to consult a doctor."
       ]
@@ -465,6 +487,7 @@
         "What should I eat or drink if I am suffering from Tuberculosis?",
         "How can I keep from getting Tuberculosis?"
       ],
+      "check":"tuberculosis",
       "responses": [
         "Medicines you can consume :antibiotics (isoniazid and rifampicin),Rifampin (RIF),Pyrazinamide (PZA),prevention that you must follow :Take BCG vaccination to be safe,keep good ventilation,be exposed to sunlight for sometime as UV light kills off TB bacteria, covering the mouth and nose when coughing or sneezing reduces the spread of TB bacteria.,SUGGESTED FOODS ARE:Fruits and vegetables like orange, mango, sweet pumpkin and carrots, guava, amla, tomato, nuts and seeds which are an excellent source of Vitamin A, C and E,,Avoid spicy, hot, salty oily foods"
       ]
@@ -479,6 +502,7 @@
         "Headaches",
         "Dizziness or lightheadedness"
       ],
+      "check":"anemia",
       "responses": [
         "This might be the initial stage of anemia.I recommend you to consult a doctor as it might get severe later."
       ]
@@ -491,6 +515,7 @@
         "What should I eat or drink if I am suffering from anemia?",
         "How can I keep from getting anemia?"
       ],
+      "check":"anemia",
       "responses": [
         "medicines you can consume :Feosol(ferrous sulfate),cyanocobalamin,Slow Fe, prevention that you must follow :Making healthy lifestyle choices,including a nutritious, iron-rich diet, can help prevent common types of anemia,keep yourself physically active,suggested foods are:Take Iron-rich foods which include beans, lentils, iron-fortified cereals, dark green leafy vegetables and dried fruit.,dark green leafy vegetables, green peas, kidney beans, "
       ]
@@ -502,6 +527,7 @@
         "Neck stiffness",
         "numbness and weakness in the arms"
       ],
+      "check":"Cervical spondylosis",
       "responses": [
         "This might be the initial stage of Cervical spondylosis . I recommend you to consult a doctor d."
       ]
@@ -514,6 +540,7 @@
         "What should I eat or drink if I am suffering fromCervical spondylosis?",
         "How can I keep from getting Cervical spondylosis?"
       ],
+      "check":"Cervical spondylosis",
       "responses": [
         "medicines you can consume :Ibuprofen (Advil, Motrin IB, others),naproxen sodium (Aleve) or acetaminophen (Tylenol, others), prevention that you must follow :Stay physically active,Use good posture,Prevent neck injuries by always using the right equipment and the right form when exercising or playing sports,Avoid trauma to your neck,SUGGESTED FOODS ARE:Dairy products –Avoid red meat, white potato and coffee as it increase acid load in the body, Include fruit juice and veg soup in the routine diet.,Replace rice with wheat,Avoid spicy, hot, salty oily foods"
       ]
@@ -525,6 +552,7 @@
         "joint pain usually accompanied with fever",
         "swelling and stiffness in the joints"
       ],
+      "check":"Arthritis",
       "responses": [
         "This might be the initial stage of Arthritis. I recommend you to consult a doctor."
       ]
@@ -537,6 +565,7 @@
         "What should I eat or drink if I am suffering from Arthritis?",
         "How can I keep from getting Arthritis?"
       ],
+      "check":"Arthritis",
       "responses": [
         "medicines you can consume : Nonsteroidal anti-inflammatory drugs (NSAIDs),Disease-modifying antirheumatic drugs (DMARDs), prevention that you must follow :Stay at a healthy weight,Control your blood sugar,Quit smoking, Gentle stretching can improve your range of motion and keep your joints limber,SUGGESTED FOODS ARE:Dairy products – Milk, Curd, Cheese for calcium,If you are an Arthritic patient, then replace your vegetable oils with olive oil."
       ]
@@ -549,6 +578,7 @@
         "Itchy eyes",
         "More sensitive to light"
       ],
+      "check":"Conjunctivitis",
       "responses": [
         "This might be the intial stage Conjunctivitis but it is very common and will get better by its own"
       ]
@@ -561,6 +591,7 @@
         "What should I eat or drink if i am suffering from Conjunctivitis?",
         "How can I keep from getting Conjunctivitis?"
       ],
+      "check":"Conjunctivitis",
       "responses": [
         "medicines you can consume : antihistamines and mast cell stabilizers, drugs that help control inflammation, such as decongestants, steroids and anti-inflammatory drops,Don't share eye cosmetics or personal eye care items., prevention that you must follow :Don't touch your eyes with your hands.,Stay hydrated,SUGGESTED drops for eyes are:herbal eye drops,Include Omega-3 oil"
       ]
@@ -576,6 +607,7 @@
         "Sore Throat",
         "Shortness of breath"
       ],
+      "check":"coronavirus",
       "responses": [
         "This might be the case of coronavirus. We suggest you to please measure your oxygen level and isolate yourselves from others."
       ]
@@ -588,6 +620,7 @@
         "What should I eat or drink if i am suffering from Coronavirus?",
         "How can I keep from getting Coronavirus?"
       ],
+      "check":"coronavirus",
       "responses": [
         "Isolate yourself in a well ventilated room,Mask should be discarded only after disinfecting it with 1% Sodium Hypochlorite.., Ensure cleaning of surfaces in the room that are touched often (tabletops, doorknobs, handles, etc.) with 1% hypochlorite solution,Connect with the treating physician promptly if any deterioration of symptoms is noticed.,"
       ]
@@ -595,13 +628,12 @@
     {
       "tag": "Cancer",
       "patterns": [
-        "abnormal lump",
+        "abnormal lump in body",
         "unexplained weight loss",
-        "Tiredness or Fatigue",
         "change in bowel movements",
-        "abnormal bleeding",
-        "prolonged cough"
+        "abnormal bleeding"
       ],
+      "check":"cancer",
       "responses": [
         "This might be the case of cancer. We suggest you to please consult a doctor as soon as possible"
       ]
@@ -614,6 +646,7 @@
         "What should I eat or drink if i am suffering from cancer?",
         "How can I keep from getting Cancer?"
       ],
+      "check":"cancer",
       "responses": [
         "Avoiding known causes of cancer like tobacco use, radiation exposure,A diet low in fat and high in fiber, fruits, and vegetables lowers the risk of certain types of cancers,Vaccination against hepatitis B virus and human papillomavirus,Screening tests at regular intervals of those who are at higher risk e.g., people who have family history of cancers or who are exposed to ionizing radiations."
       ]

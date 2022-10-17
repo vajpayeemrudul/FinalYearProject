@@ -40,10 +40,11 @@ def predict_class(sentence, model):
     # filter out predictions below a threshold
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.25
+    ERROR_THRESHOLD = 0.05
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
+    print(results)
     return_list = []
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
@@ -56,12 +57,20 @@ def getResponse(ints, intents_json):
     print()
     list_of_intents = intents_json['intents']
     result = None
+    checked_resp = ""
     for i in list_of_intents:
         if(i['tag']== tag):
-            result = random.choice(i['responses'])
+            check = i.get("check", None)
+            if check:
+                if check.lower() in tag.lower(): # assuming tag is a string
+                    print("this is in checked reponse")
+                    checked_resp = random.choice(i['responses'])
+            else:
+                result = random.choice(i['responses'])
             print(result, tag)
             print()
-            break
+    if checked_resp:
+        return checked_resp
     if result is None:
         return "I did not understand your question."
     return result
