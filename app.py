@@ -50,12 +50,15 @@ def predict_class(sentence, model):
     return return_list
 
 def getResponse(ints, intents_json):
+    print("tag: " ,tag)
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     result = None
     for i in list_of_intents:
         if(i['tag']== tag):
             result = random.choice(i['responses'])
+            print(result, tag)
+            print()
             break
     if result is None:
         return "I did not understand your question."
