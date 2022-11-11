@@ -21,7 +21,7 @@ intents = json.loads(data_file)
 
 for intent in intents['intents']:
     if "patterns" not in intent.keys():
-        print("gadbad intent: ", intent)
+        print("intent Not found: ", intent)
     for pattern in intent['patterns']:
 
         #tokenize each word

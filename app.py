@@ -13,6 +13,9 @@ intents = json.loads(open('data.json').read())
 words = pickle.load(open('texts.pkl','rb'))
 classes = pickle.load(open('labels.pkl','rb'))
 
+SYMPTOMS_GLOBAL = []
+COLLECTED = False
+
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
     sentence_words = nltk.word_tokenize(sentence)
@@ -52,23 +55,26 @@ def predict_class(sentence, model):
 
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
-    print("tag: " ,tag)
+    print("tag: " ,tag) # tag is a string
     print(ints)
     print()
     list_of_intents = intents_json['intents']
     result = None
     checked_resp = ""
     for i in list_of_intents:
-        if(i['tag']== tag):
-            check = i.get("check", None)
-            if check:
-                if check.lower() in tag.lower(): # assuming tag is a string
-                    print("this is in checked reponse")
-                    checked_resp = random.choice(i['responses'])
-            else:
-                result = random.choice(i['responses'])
-            print(result, tag)
-            print()
+        # if 
+        # if(i['tag']== tag):
+        #     check = i.get("check", None)
+        #     if check:
+        #         if check.lower() in tag.lower(): # assuming tag is a string
+        #             print("this is in checked reponse")
+        #             checked_resp = random.choice(i['responses'])
+        #     else:
+        #         result = random.choice(i['responses'])
+        #     print(result, tag)
+        #     print()
+        if (i['tag']== tag):
+            result = random.choice(i['responses'])
     if checked_resp:
         return checked_resp
     if result is None:
@@ -76,8 +82,33 @@ def getResponse(ints, intents_json):
     return result
 
 def chatbot_response(msg):
+    # COLLECTED = False
+    tags_not_symptoms = ["greeting", "goodbye"]
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
+    tag = ints[0]['intent']
+
+    if tag in tags_not_symptoms or "prevention" in tag or not COLLECTED:
+        return res
+    
+    sym_complete = ["N", "no"]
+    if msg.lower() in [item.lower() for item in sym_complete]:
+        COLLECTED=True
+        msg_concat = ", ".join(SYMPTOMS_GLOBAL)
+        ints = predict_class(msg_concat, model)
+        res = getResponse(ints, intents)
+    else:
+        if len(SYMPTOMS_GLOBAL)==0 and not COLLECTED:
+            res = "How are you feeling? Please tell us your symptoms."
+            SYMPTOMS_GLOBAL.append(msg)
+        else:
+            # SYMPTOMS_GLOBAL.append(msg)
+            if not COLLECTED:
+                SYMPTOMS_GLOBAL.append(msg)
+                res = "Any other symptoms? Enter No/N if you have entered all symptoms. "
+            else:
+                return res
+
     return res
 
 
