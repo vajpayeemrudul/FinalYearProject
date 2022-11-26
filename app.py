@@ -83,13 +83,21 @@ def getResponse(ints, intents_json):
 
 def chatbot_response(msg):
     # COLLECTED = False
+    if "COLLECTED" not in locals().keys():
+        COLLECTED = False
+    
+    
+    if "prevent this" in msg:
+        return "Please specify the name of the disease"
+
     tags_not_symptoms = ["greeting", "goodbye"]
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
     tag = ints[0]['intent']
 
-    if tag in tags_not_symptoms or "prevention" in tag or not COLLECTED:
+    if (tag in tags_not_symptoms or "prevention" in tag) and not COLLECTED:
         return res
+    
     
     sym_complete = ["N", "no"]
     if msg.lower() in [item.lower() for item in sym_complete]:

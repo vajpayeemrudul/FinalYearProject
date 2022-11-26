@@ -41,7 +41,7 @@
     <form class="msger-inputarea">
       <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
       <button type="submit" class="msger-send-btn">Send</button>
-      <button type="submit" class="report-btn">Get Report</button>
+      <button type="submit" class="report-btn" onclick="">Get Report</button>
     </form>
   </section>
   <!-- partial -->
@@ -68,11 +68,13 @@
       appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
       msgerInput.value = "";
       botResponse(msgText);
+
     });
 
     function appendMessage(name, img, side, text) {
       //   Simple solution for small apps
-      const msgHTML = `
+      const msgHTML =
+       `
 <div class="msg ${side}-msg">
   <div class="msg-img" style="background-image: url(${img})"></div>
 
