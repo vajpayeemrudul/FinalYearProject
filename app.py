@@ -1,9 +1,16 @@
 import nltk
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
+from flask import send_file, redirect, url_for
+
 
 from keras.models import load_model
 model = load_model('model.h5')
@@ -15,6 +22,16 @@ classes = pickle.load(open('labels.pkl','rb'))
 
 SYMPTOMS_GLOBAL = []
 COLLECTED = False
+initial_ques = [
+    "Please tell me your name.",
+    "What is your age?",
+    "Recorded blood sugar levels? Enter 'N' if not recorded yet.",
+    "Recorded blood pressure levels? Enter 'N' if not recorded yet.",
+]
+initial_ques_res = {item:[False, ""] for item  in initial_ques}
+# initial_ques_ans = [False]*4
+
+
 
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
@@ -47,7 +64,7 @@ def predict_class(sentence, model):
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
-    print(results)
+    # print(results)
     return_list = []
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
@@ -56,8 +73,8 @@ def predict_class(sentence, model):
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     print("tag: " ,tag) # tag is a string
-    print(ints)
-    print()
+    # print(ints)
+    # print()
     list_of_intents = intents_json['intents']
     result = None
     checked_resp = ""
@@ -81,12 +98,25 @@ def getResponse(ints, intents_json):
         return "I did not understand your question."
     return result
 
+
+
 def chatbot_response(msg):
     # COLLECTED = False
     if "COLLECTED" not in locals().keys():
         COLLECTED = False
     
+    # if "initial_ques" not in locals().keys():
+    #     initial_ques = [
+    #         "Please tell me your name.",
+    #         "What is your age?",
+    #         "Recorded blood sugar levels? Enter 'N' if not recorded yet.",
+    #         "Recorded blood pressure levels? Enter 'N' if not recorded yet.",
+    #     ]
+    #     initial_ques_ans = [False]*4
     
+    # if not COLLECTED:
+
+
     if "prevent this" in msg:
         return "Please specify the name of the disease"
 
@@ -132,8 +162,45 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
+
+    for index, item in enumerate(initial_ques_res.items()):
+        # print(initial_ques_res) 
+        k,v = item
+        if v[1] =="" and v[0] is False:
+            initial_ques_res[k] = [True, ""]
+            return k
+        elif v[1] =="" and v[0] is True:
+            initial_ques_res[k] = [True, userText]
+        if index==3 and initial_ques_res[k][0] == True and initial_ques_res[k][0] != "":
+            print(initial_ques_res)
+            return chatbot_response(userText)
+    
+    print(initial_ques_res)
+    # if init_check!= True:
+    #     return chatbot_response(userText)
+    
     return chatbot_response(userText)
+
+# @app.route("/post")
+@app.route('/download', methods=['GET', 'POST']) 
+def download_report():
+    print("1111111111111111111111111111111111111111111111111111111111111111111")
+    data = initial_ques_res
+    data = {k:[v[1]] for k,v in data.items()}
+    df = pd.DataFrame(data)
+    df = df.T
+    fig, ax =plt.subplots(figsize=(12,4))
+    ax.axis('tight')
+    ax.axis('off')
+    table = pd.plotting.table(ax, df)
+    pp = PdfPages("report.pdf")
+    pp.savefig(fig, bbox_inches='tight')
+    pp.close()
+    return send_file('./report.pdf', as_attachment=True)
+    # return redirect(url_for('download_report'))
+
 
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()

@@ -31,7 +31,7 @@
           </div>
 
           <div class="msg-text">
-            Hi, welcome to your Wellbeing Assistant! Go ahead and send me a message. 🧑‍⚕️
+            Hi, welcome to your Wellbeing Assistant! 🧑‍⚕️
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
     <form class="msger-inputarea">
       <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
       <button type="submit" class="msger-send-btn">Send</button>
-      <button type="submit" class="report-btn" onclick="">Get Report</button>
+      <button type="submit" class="report-btn" onclick="getReport()">Get Report</button>
     </form>
   </section>
   <!-- partial -->
@@ -103,6 +103,15 @@
         appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
 
       });
+
+    }
+    function getReport(event) {
+
+      // Bot Response
+      // alert("this is x");
+      // $.post("/download_run", {}).done(console.log("this is com."));
+      $.post("/download", {}).done(console.log("this is com."));
+      window.location.assign("/download");
 
     }
 
