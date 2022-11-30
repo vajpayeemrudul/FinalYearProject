@@ -45,7 +45,6 @@ def clean_up_sentence(sentence):
 
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 
-
 def bow(sentence, words, show_details=True):
     # tokenize the pattern
     sentence_words = clean_up_sentence(sentence)
@@ -179,19 +178,24 @@ def download_report():
     data = initial_ques_res
     data = {k: [v[1]] for k, v in data.items()}
     
-    data["Provided Symptoms"] = [twp.fill(SYMPTOMS_GLOBAL,25)]
+    data["Provided Symptoms"] = [twp.fill(", ".join(SYMPTOMS_GLOBAL),25)]
     data["Predicted disease"] = [twp.fill(med,50)]
     df = pd.DataFrame(data)
     df = df.T
+    df =  df.reset_index()
     df = df.rename(columns={"index":  "Query", 0:"Response"})
     df["Query"] = [twp.fill(item,50) for item in df["Query"]]
     
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.axis("off")
-    table = pd.plotting.table(ax, df, colWidths=[1,1])
+    table = pd.plotting.table(ax, df, colWidths=[1,1], loc='best')
     table.set_fontsize(15)
     table.wrap = True
-    table.scale(1, 4.5)
+    table.scale(1, 7.5)
+    cellDict=table.get_celld()
+    cellDict[(6, -1)].set_height(0.7)
+    cellDict[(6, 0)].set_height(0.7)
+    cellDict[(6, 1)].set_height(0.7)
     pp = PdfPages("report.pdf")
     pp.savefig(fig, bbox_inches="tight")
     pp.close()
@@ -201,32 +205,41 @@ def download_report():
 
 @app.route("/analysis", methods=["GET", "POST"])
 def analysis():
+    age = initial_ques_res["What is your age?"]
+    try:
+        age =int(age)
+    except:
+        pass
+
+
     df = pd.DataFrame(
         {
-            "graph_name": ["trace 1"],
-            "value": [1],
+            "Age Group": ["Patient's Value"],
+            "Value": [1],
             #                    'color':np.random.choice([0,1,2,3,4,5`,6,7,8,9], size=100, replace=True)
         }
     )
 
     fig = px.strip(
         df,
-        x="graph_name",
-        y="value",
-        #         title="Patient's value",
-        labels=["Patient's value"],
+        x="Age Group",
+        y="Value",
+        #         title="Patient's Value",
+        labels=["Patient's Value"],
         #          color='color',
         stripmode="overlay",
     )
     import random
 
     # fig = go.Figure()
-    for item in range(5):
+    for item, trace in zip(range(5), ["0-20", "20-40", "40-60", "60-80", "80-100"]):
+        # age_grp = [int(item[0]),  for item]
         y = np.random.randn(50) - random.randint(-1, 1) * random.randint(0, 3)
         fig.add_trace(
             go.Box(
                 y=y,
-                boxpoints="all",
+                boxpoints=False,
+                name=trace
             )
         )
     fig.show(renderer="browser")
@@ -234,4 +247,4 @@ def analysis():
 
 if __name__ == "__main__":
     # app.debug = True
-    app.run()
+    app.run(port=5001)

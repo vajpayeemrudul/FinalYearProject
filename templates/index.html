@@ -42,6 +42,7 @@
       <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
       <button type="submit" class="msger-send-btn">Send</button>
       <button type="submit" class="report-btn" onclick="getReport()">Get Report</button>
+      <button type="submit" class="report-btn" onclick="getAnalysis()">Get Analysis</button>
     </form>
   </section>
   <!-- partial -->
@@ -111,9 +112,23 @@
       // alert("this is x");
       // $.post("/download_run", {}).done(console.log("this is com."));
       $.post("/download", {}).done(console.log("this is com."));
-      window.location.assign("/download");
+      // window.location.assign("/download");
+      // window.location.href = "http://127.0.0.1:5000/download";
 
     }
+
+
+    function getAnalysis(event) {
+
+    // Bot Response
+    // alert("this is x");
+    // $.post("/download_run", {}).done(console.log("this is com."));
+    $.post("/analysis", {}).done(console.log("this is com."));
+    // window.location.assign("/download");
+    // window.location.href = "http://127.0.0.1:5000/download";
+
+    }
+
 
     // Utils
     function get(selector, root = document) {
